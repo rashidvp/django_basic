@@ -1,0 +1,11 @@
+{% block content %}
+    <form action="login" method='POST'>
+        {% csrf_token %}
+        <label>UserName: </label>
+        <input type="text" name="username" id="username" placeholder="username" required><br><br>
+        <label>Password: </label>
+        <input type="text" name="password" id="password" placeholder="password" required><br>
+        <p>{{error}}</p>
+        <button type="submit">LogIn</button>
+    </form>
+{% endblock content %}
