@@ -1,0 +1,55 @@
+{% extends 'crud_theme.html' %}
+
+{% block content %}
+<h1><center>Update Product</center></h1>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Product Id</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+      <tr>
+        <th>{{product.id}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.stock}}</td>
+      </tr>
+    
+    </tbody>
+  </table>
+
+<form action="{% url 'admin_update' %}" method="POST" class="p-5">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="formGroupExampleInput">Product ID: </label>
+      <input type="text" value="{{product.id}}" name="id" class="form-control" id="formGroupExampleInput" style="width: 50%;" readonly>
+    </div>
+    {% endfor %}
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Product Name: </label>
+      <input type="text" name="name" class="form-control" id="formGroupExampleInput2" style="width: 50%;">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Price: </label>
+        <input type="text" name="price" class="form-control" id="formGroupExampleInput2" style="width: 50%;">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Stock: </label>
+        <input type="text" name="stock" class="form-control" id="formGroupExampleInput2" style="width: 50%;">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Image: </label>
+        <input type="text" name="image" class="form-control" id="formGroupExampleInput2" style="width: 50%;">
+    </div>
+</div>
+<div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</div>
+</form>
+{% endblock %}

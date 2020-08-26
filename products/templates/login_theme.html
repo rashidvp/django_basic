@@ -8,27 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>E-kart</title>
+    <title>Hello, world!</title>
   </head>
-  <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-      <a class="navbar-brand" href="#"><b>E-kart</b></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="{% url 'index' %}">Home</a>
-          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-
-          <form class="form-inline" pad="left">
-            <a href="{% url 'login' %}" class="btn btn-outline-success my-2 my-sm-0" href="#">Logout</a>
-          </form>
-
-        </div>
-      </div>
-    </nav>
+  <body class="bg-warning">
 
     {% block content%}
 

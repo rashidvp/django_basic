@@ -1,0 +1,7 @@
+{# code shortened for demonstration purposes #}
+
+<form action="." method="post" enctype="application/x-www-form-urlencoded">
+    {{ form.as_table }}
+    {% csrf_token %}
+    <button type="submit">Insert</button>
+</form>

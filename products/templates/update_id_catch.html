@@ -1,0 +1,15 @@
+{% extends 'crud_theme.html' %}
+
+{% block content %}
+<h1><center>Update Product</center></h1>
+<form action="{% url 'admin_update' %}" method="POST" class="p-5">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="formGroupExampleInput">Product ID: </label>
+      <input type="text" name="id" class="form-control" id="formGroupExampleInput" style="width: 50%;">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form> 
+{% endblock %}
