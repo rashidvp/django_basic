@@ -8,23 +8,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>E-kart</title>
+    <title>Hello, world!</title>
   </head>
-  <body>
-
-    <nav class="navbar navbar-light bg-warning"">
-      <a class="navbar-brand"><h4><center><b>E-Kart</b></center></h4></a>
-      <form action="{% url 'user_search' %}" method="POST" class="form-inline">
-        {% csrf_token %}
-        <input class="form-control mr-sm-2" type="search" name="id" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-  </nav>
+  <body class="bg-info">
 
     {% block content%}
 
     {% endblock %}
 
+
+      <form class="form-inline p-3" pad="left">
+        <a href="{% url 'logout' %}" class="btn btn-danger my-2 my-sm-0" href="#">Logout</a>
+      </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

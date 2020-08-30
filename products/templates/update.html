@@ -24,7 +24,7 @@
     </tbody>
   </table>
 
-<form action="{% url 'admin_update' %}" method="POST" class="p-5">
+<form action="{% url 'admin_add' %}" method="POST" class="p-5">
     {% csrf_token %}
     <div class="form-group">
       <label for="formGroupExampleInput">Product ID: </label>
@@ -33,19 +33,19 @@
     {% endfor %}
     <div class="form-group">
       <label for="formGroupExampleInput2">Product Name: </label>
-      <input type="text" name="name" class="form-control" id="formGroupExampleInput2" style="width: 50%;">
+      <input type="text" name="name" class="form-control" id="formGroupExampleInput2" style="width: 50%;" required>
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Price: </label>
-        <input type="text" name="price" class="form-control" id="formGroupExampleInput2" style="width: 50%;">
+        <input type="text" name="price" class="form-control" id="formGroupExampleInput2" style="width: 50%;" required>
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Stock: </label>
-        <input type="text" name="stock" class="form-control" id="formGroupExampleInput2" style="width: 50%;">
+        <input type="text" name="stock" class="form-control" id="formGroupExampleInput2" style="width: 50%;" required>
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Image: </label>
-        <input type="text" name="image" class="form-control" id="formGroupExampleInput2" style="width: 50%;">
+        <input type="text" name="image" class="form-control" id="formGroupExampleInput2" style="width: 50%;" required>
     </div>
 </div>
 <div>

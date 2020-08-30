@@ -1,52 +1,43 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends 'admin_theme.html' %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+{%block content%}
 
-    <title>Hello, world!</title>
-  </head>
-  <body class="bg-info">
-    <h1><center>Admin Panel!</center></h1><br>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand"><h4><center><b>E-Kart</b></center></h4></a>
+  <a class="nav-link" href="{% url 'admin' %}">Product List</a>
+  <a class="nav-link" href="{% url 'user_list' %}">User List</a>
+  <form action="{% url 'admin_search' %}" method="POST" class="form-inline">
+    {% csrf_token %}
+    <input class="form-control mr-sm-2" type="search" name="id" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
 
-    <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Product Id</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Stock</th>
-          </tr>
-        </thead>
-        <tbody>
-        {% for product in products %}
-          <tr>
-            <th>{{product.id}}</th>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.stock}}</td>
-          </tr>
-        {% endfor %}
-        </tbody>
-      </table>
+<h1><center>Admin Panel!</center></h1><br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Product Id</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for product in products %}
+    <tr>
+      <th>{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.stock}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
 
-      <center>
-      <a href="{% url 'update_id_catch' %}"><button type="button" class="btn btn-warning">Update</button></a>
-      <a href="{% url 'admin_add' %}"><button type="button" class="btn btn-warning">Add</button></a>
-      <a href="{% url 'admin_delete' %}"><button type="button" class="btn btn-warning">Delete</button></a>
-      </center>
-
-      <form class="form-inline p-3" pad="left">
-        <a href="{% url 'login' %}" class="btn btn-danger my-2 my-sm-0" href="#">Logout</a>
-      </form>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
-</html>
+<center>
+  <a href="{% url 'update_id_catch' %}"><button type="button" class="btn btn-warning">Update</button></a>
+  <a href="{% url 'admin_add' %}"><button type="button" class="btn btn-warning">Add</button></a>
+  <a href="{% url 'admin_delete' %}"><button type="button" class="btn btn-warning">Delete</button></a>
+</center>
+{%endblock%}

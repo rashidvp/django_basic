@@ -1,0 +1,31 @@
+{% extends 'admin_theme.html' %}
+
+{%block content%}
+
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand"><h4><center><b>E-Kart</b></center></h4></a>
+    <a class="nav-link" href="{% url 'admin' %}">Product List</a>
+    <a class="nav-link" href="{% url 'user_list' %}">User List</a>
+  </nav>
+
+  <h1><center>Admin Panel!</center></h1><br>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">User id</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for user in users %}
+    <tr>
+      <th>{{user.id}}</th>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{%endblock%}

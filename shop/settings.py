@@ -79,12 +79,11 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ekart2',
-        'USER': 'rash',
-        'PASSWORD': 'rash123',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ekart4',
+        'USER': 'postgres',
+        'PASSWORD': 'rashi123',
         'HOST': 'localhost',
-        'PORT': '',
     }
 }
 
